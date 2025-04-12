@@ -1,0 +1,62 @@
+ 
+
+.error{
+    color: red;
+}
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+nav {
+    min-height: 60px;
+    background-color: #1e1e1e;  
+    color: #FFFFFF;
+    display: flex;
+    justify-content: flex-start; /* Ustawienie linków do lewej */
+    align-items: center;
+    padding: 0 15px;
+    border-bottom: 2px solid #444; /* Dodanie linii na dole */
+}
+nav a {
+    text-decoration: none; /* Usuwa podkreślenie */
+    color: white; /* Ustawia biały kolor tekstu */
+    font-size: 20px; /* Zwiększona czcionka */
+    margin-right: 30px; /* Większy odstęp między linkami */
+    padding: 7px 10px; /* Dodanie wewnętrznych odstępów */
+    border-radius: 5px; /* Zaokrąglenie rogów */
+    transition: background-color 0.3s ease; /* Płynne przejście koloru tła */
+}
+nav a:hover {
+    background-color: #444; /* Zmiana koloru tła po najechaniu */
+    color: #fff; /* Kolor tekstu po najechaniu */
+}
+nav a:active {
+    background-color: #333; /* Kolor tła po kliknięciu */
+}
+
+main{
+    padding: 8px;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

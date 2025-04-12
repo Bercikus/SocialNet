@@ -1,0 +1,19 @@
+-- Usunięcie tabeli users, jeśli istnieje
+DROP TABLE IF EXISTS users;
+ 
+
+-- Tworzenie nowej bazy danych
+CREATE DATABASE social_media_db;
+
+-- Używanie nowo utworzonej bazy
+USE social_media_db;
+
+-- Tworzenie tabeli users
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `usser` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `roll` varchar(20) DEFAULT 'gosc',
+  `email` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci AUTO_INCREMENT=10;
