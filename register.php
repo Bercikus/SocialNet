@@ -1,5 +1,7 @@
 <?php
 session_start(); 
+require_once('dbConnection.php');
+
 
 function validateLogin($input) {
     return preg_match('/^[a-zA-Z0-9_]{6,30}$/', $input);
@@ -116,16 +118,10 @@ if (isset($_COOKIE['user_id'])) {
 
     if ($xmlObject === false) {
         //błąd przy przetwarzaniu XML 
-    } else {
-        // Dane do bazy
-        $dbHost = "localhost";
-        $dbUser = "root";
-        $dbPass = "";
-        $dbName = "social_media_db";
-
-        // Połączenie z bazą danych
-        $conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
-
+    } else {  
+        // Połączenie z bazą danych 
+        $conn = connectDB();
+ 
         if ($conn->connect_error) {
             die("Błąd połączenia: " . $conn->connect_error);
         }
@@ -143,7 +139,8 @@ if (isset($_COOKIE['user_id'])) {
             exit;
         } else {
             // Hashowanie hasła
-            $hashedPassword = password_hash($xmlObject->password, PASSWORD_DEFAULT); 
+            //$hashedPassword = password_hash($xmlObject->password, PASSWORD_DEFAULT); 
+            $hashedPassword = hash('sha256', $xmlObject->password);
             // Wstawienie użytkownika do bazy danych
             $stmt = $conn->prepare("INSERT INTO users (usser, password, roll, email) VALUES (?, ?, ?, ?)");
             $stmt->bind_param("ssss", $xmlObject->usser, $hashedPassword, $xmlObject->roll, $xmlObject->email);

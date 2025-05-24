@@ -1,5 +1,10 @@
 <?php
- session_start(); 
+session_start(); 
+
+$isLogged = isset($_SESSION['isLogged']) ? $_SESSION['isLogged'] : false;
+
+
+
 
 ?>
 
@@ -15,8 +20,17 @@
 <body>
     <nav>
         <a href="index.php">Strona główna</a>
-        <a href="login.php">Login</a>
-        <a href="register.php">Rejestracja</a>
+        
+        
+        <?php
+        if($isLogged){
+            echo "<a href='logout.php'>Wyloguj</a>";
+            echo '<a href="profile.php">Profil</a>';
+        } else{
+            echo '<a href="login.php">Login</a>';
+            echo '<a href="register.php">Rejestracja</a>';
+        }
+        ?>
     </nav>
     <?php
     if(isset($_SESSION['success'])){

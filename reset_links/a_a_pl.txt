@@ -1,0 +1,1 @@
+http://localhost/socialnet/reset_password.php?token=3a2f2a15cfe2927eda517317855df0c2

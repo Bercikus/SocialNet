@@ -1,0 +1,2 @@
+w@w.pl
+http://localhost/socialnet/change_password.php?token=dc7f323ad7d2fe7bebf710b04adb7ce1

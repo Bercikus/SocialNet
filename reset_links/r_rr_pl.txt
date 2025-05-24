@@ -1,0 +1,2 @@
+r@rr.pl
+http://localhost/socialnet/reset_password.php?token=11f1853d302dc16a2fd609b7acc62127
